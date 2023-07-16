@@ -1,0 +1,12 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    Note left of browser: Text/JSON format input is given to form and save button is trigerred on browser
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    Note right of browser:JSON data is sent to the server from browser
+    server->>browser: Status code:201 Created
+    deactivate server
+
+    Note right of browser: The event handlers on JS file are executed and New data is appended on browser based on the stucture formatted on HTML and CSS files
